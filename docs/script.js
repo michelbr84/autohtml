@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function appendMessage(text, role) {
+    if (!messages) return;
     const el = document.createElement("div");
     el.className = `message ${role}`;
     el.textContent = text;
