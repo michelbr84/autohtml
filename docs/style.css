@@ -1,5 +1,5 @@
 .page-header {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding: 1rem 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #d9e4f5, #f8fafc);
@@ -48,10 +48,9 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-click:hover,
-.btn-click:focus {
+.btn-click:hover, .btn-click:focus {
   background: linear-gradient(135deg, #4a7efc, #6a9dfc);
-  box-shadow: 0 5px 15px rgba(74, 126, 252, 0.6);
+  box-shadow: 0 5px 12px rgba(74, 126, 252, 0.6);
   outline: none;
 }
 
