@@ -1,18 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btn");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      alert("Button clicked! Welcome to the elegant Hello World page.");
+  const nightToggle = document.getElementById("night-toggle");
+  const messages = document.getElementById("messages");
+  const input = document.getElementById("input");
+  const sendBtn = document.getElementById("send-btn");
+
+  if (nightToggle) {
+    nightToggle.addEventListener("change", () => {
+      document.body.classList.toggle("night-mode", nightToggle.checked);
     });
   }
 
-  const nightToggle = document.getElementById("night-toggle");
-  if (nightToggle) {
-    nightToggle.addEventListener("change", () => {
-      if (nightToggle.checked) {
-        document.body.classList.add("night-mode");
-      } else {
-        document.body.classList.remove("night-mode");
+  function appendMessage(text, role) {
+    const el = document.createElement("div");
+    el.className = `message ${role}`;
+    el.textContent = text;
+    messages.appendChild(el);
+  }
+
+  function send() {
+    if (!messages || !input) return;
+    const text = input.value.trim();
+    if (!text) return;
+    appendMessage(text, "user");
+    appendMessage("This is a simulated response.", "assistant");
+    messages.scrollTop = messages.scrollHeight;
+    input.value = "";
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener("click", send);
+  }
+
+  if (input) {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        send();
       }
     });
   }
