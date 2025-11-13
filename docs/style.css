@@ -1,65 +1,84 @@
-/* Reset and Base Styles */
-body {
+/* Reset default margins and padding */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set global font and background */
+body {
     font-family: 'Segoe UI', 'Roboto', sans-serif;
-    background-color: #ffffff;
+    background-color: #fff;
     color: #333;
     line-height: 1.6;
-    text-align: center;
+    padding: 20px;
 }
 
-/* Layout Container */
+/* Responsive container */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0 20px;
 }
 
-/* Typography */
+/* Main heading */
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    text-align: center;
     margin-bottom: 1rem;
+    color: #222;
 }
 
-p.description {
+/* Subheading */
+.description {
     font-size: 1.1rem;
     font-style: italic;
     color: #666;
+    text-align: center;
     margin-bottom: 2rem;
 }
 
-article.content {
-    font-size: 1.1rem;
+/* Content section */
+.content {
+    font-size: 1rem;
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-/* Responsive Design */
+/* Responsive design with media queries */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
-    
-    p.description, article.content {
+
+    .description {
         font-size: 1rem;
+    }
+
+    .content {
+        font-size: 0.95rem;
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
-    
-    .container {
-        padding: 20px 15px;
+
+    .description {
+        font-size: 0.9rem;
     }
-    
-    article.content {
-        font-size: 0.95rem;
+
+    .content {
+        font-size: 0.9rem;
     }
+}
+
+/* Ensure clean spacing and alignment */
+section {
+    margin-bottom: 2rem;
 }
