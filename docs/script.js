@@ -1,11 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const description = document.getElementById('page-description');
-    
-    // Optional: Add a click event to toggle description visibility
+window.addEventListener('DOMContentLoaded', () => {
+    const article = document.querySelector('.article');
+
+    // Optional: Add fade-in animation when page loads
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(article);
+
+    // Optional: Add hover effect to description
+    const description = document.querySelector('.header__description');
     if (description) {
-        description.addEventListener('click', function() {
-            this.style.color = this.style.color === 'blue' ? '#34495e' : 'blue';
-            this.style.fontWeight = this.style.fontWeight === 'bold' ? 'normal' : 'bold';
+        description.addEventListener('mouseenter', () => {
+            description.style.color = '#1a1a1a';
+            description.style.fontWeight = '700';
+        });
+        description.addEventListener('mouseleave', () => {
+            description.style.color = '#555';
+            description.style.fontWeight = '600';
         });
     }
 });
