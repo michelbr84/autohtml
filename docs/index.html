@@ -3,28 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Hello World!</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header class="page-header">
-  <h1 class="main-heading">Hello World!</h1>
-  <div class="header-actions">
-    <label class="toggle-label">
-      <input type="checkbox" id="night-toggle" class="toggle-input">
-      <span class="toggle-text">Night mode</span>
-    </label>
+<body class="w3-dark-gray">
+<header class="page-header w3-padding w3-margin-bottom">
+  <div class="w3-content w3-display-container">
+    <h1 class="main-heading w3-xxlarge w3-center">Hello World!</h1>
+    <div class="header-actions w3-display-topright w3-padding-small">
+      <label class="toggle-label w3-small w3-text-light-grey">
+        <input type="checkbox" id="night-toggle" class="toggle-input">
+        <span class="toggle-text">Night mode</span>
+      </label>
+    </div>
   </div>
 </header>
 <main class="content">
-  <section class="intro">
-    <p>Welcome to the Hello World page, a simple demonstration of semantic HTML and elegant structure.</p>
-  </section>
-  <section class="actions">
-    <button id="btn" class="btn-click">Click me</button>
-  </section>
+  <div class="w3-content">
+    <div class="w3-card w3-padding-large w3-margin w3-round-large w3-black w3-center">
+      <section class="intro w3-margin-bottom">
+        <p>Welcome to the Hello World page, a simple demonstration of semantic HTML, elegant structure, and a touch of W3.CSS styling.</p>
+      </section>
+      <section class="actions w3-margin-top">
+        <button id="btn" class="btn-click w3-button w3-blue w3-round-large">Click me</button>
+      </section>
+    </div>
+  </div>
 </main>
-<footer class="page-footer">
-  <small>© 2024 Hello World Example.</small>
+<footer class="page-footer w3-center w3-padding w3-margin-top">
+  <small>&copy; 2024 Hello World Example.</small>
 </footer>
 <script src="script.js"></script>
 </body>
