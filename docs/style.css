@@ -1,10 +1,11 @@
 /* Base styles */
 body {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Inter', 'Helvetica', sans-serif;
     background-color: #fff;
     color: #333;
     line-height: 1.8;
     padding: 20px;
+    margin: 0;
 }
 
 /* Layout container */
@@ -14,7 +15,7 @@ body {
     padding: 20px;
 }
 
-/* Heading styles */
+/* Main heading */
 h1 {
     font-size: 2rem;
     font-weight: 700;
@@ -23,7 +24,7 @@ h1 {
     color: #1a1a1a;
 }
 
-/* Subheading styles */
+/* Description text */
 .description {
     font-size: 1.1rem;
     font-style: italic;
