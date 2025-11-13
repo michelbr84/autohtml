@@ -1,31 +1,37 @@
+/* Base typography & page structure (W3.CSS handles layout/spacing) */
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .page-header {
-  margin-bottom: 3rem;
-  padding: 1rem 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #d9e4f5, #f8fafc);
+  padding: 1.5rem 0;
   text-align: center;
+  background: linear-gradient(135deg, #d9e4f5, #f8fafc);
 }
 
 .main-heading {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3rem;
-  color: #333;
-  margin: 1rem 0 1.5rem 0;
-  text-align: center;
+  margin: 0.5rem 0 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #222;
 }
 
 .content {
   max-width: 720px;
-  margin: 0 auto 3rem auto;
-  padding: 1.5rem 2rem;
+  margin: 0 auto 2.5rem;
+  padding: 1.5rem 1.5rem 2rem;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .intro {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
   color: #444;
 }
@@ -36,43 +42,39 @@
 }
 
 .btn-click {
-  background: linear-gradient(135deg, #6a9dfc, #4a7efc);
   border: none;
-  padding: 0.75rem 2rem;
-  color: white;
+  padding: 0.7rem 2rem;
   font-size: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #6a9dfc, #4a7efc);
+  border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(74, 126, 252, 0.6);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(74, 126, 252, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
 }
 
 .btn-click:hover,
 .btn-click:focus {
   background: linear-gradient(135deg, #5474ff, #3358cc);
-  box-shadow: 0 5px 15px rgba(51, 88, 204, 0.8);
+  box-shadow: 0 5px 16px rgba(51, 88, 204, 0.5);
   outline: none;
+}
+
+.btn-click:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(51, 88, 204, 0.35);
 }
 
 .page-footer {
   text-align: center;
   font-size: 0.9rem;
-  padding: 2rem 1rem 1rem 1rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-  margin-top: 3rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem 1rem 1.5rem;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
 }
 
-/* Night mode base transitions */
-body,
-.content,
-.btn-click {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Night mode theme */
+/* Night mode base */
 body.night-mode {
   background-color: #0f172a;
   color: #e5e7eb;
@@ -114,19 +116,19 @@ body.night-mode .btn-click:focus {
   box-shadow: 0 6px 20px rgba(79, 70, 229, 0.9);
 }
 
-/* Night mode toggle switch */
+/* Night-mode toggle switch */
 #night-toggle {
   position: relative;
   width: 40px;
-  height: 20px;
+  height: 22px;
   -webkit-appearance: none;
   appearance: none;
   background-color: #e5e7eb;
   border-radius: 999px;
-  outline: none;
   cursor: pointer;
   border: 1px solid #cbd5f5;
   vertical-align: middle;
+  outline: none;
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -135,8 +137,8 @@ body.night-mode .btn-click:focus {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background-color: #4b5563;
   border-radius: 50%;
   transition: transform 0.25s ease, background-color 0.25s ease;
@@ -148,7 +150,7 @@ body.night-mode .btn-click:focus {
 }
 
 #night-toggle:checked::before {
-  transform: translateX(20px);
+  transform: translateX(16px);
   background-color: #e5e7eb;
 }
 
@@ -156,7 +158,6 @@ body.night-mode .btn-click:focus {
   margin-left: 0.5rem;
   font-size: 0.9rem;
   color: #6b7280;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   vertical-align: middle;
 }
 
