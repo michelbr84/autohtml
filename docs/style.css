@@ -1,45 +1,49 @@
-/* Base layout tuned for W3.CSS + w3-theme-indigo */
+/* App-specific layout tuned to coexist with W3.CSS (incl. w3-theme-indigo) and Bootstrap 5 */
+
+/* Limit global impact: only minimal base for this app */
 body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   background-color: #f4f6fb;
   color: #222;
 }
 
-/* App shell */
+/* Root app layout */
 .app-layout {
   display: flex;
   min-height: 100vh;
 }
 
-.sidebar {
+/* Sidebar */
+.app-layout .sidebar {
   flex: 0 0 260px;
   display: flex;
   flex-direction: column;
   padding: 8px;
   background-color: #eef2fb;
-  border-right: 1px solid rgba(63,81,181,0.18);
+  border-right: 1px solid rgba(63, 81, 181, 0.18);
 }
 
-.main-area {
-  flex: 1;
+/* Main area */
+.app-layout .main-area {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-/* Header / topbar inside main-area */
-.main-topbar {
+/* Header / top bar inside main area */
+.app-layout .main-area .main-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(63,81,181,0.12);
+  border-bottom: 1px solid rgba(63, 81, 181, 0.12);
 }
 
 /* Messages area */
 #messages {
-  flex: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -62,14 +66,14 @@ body {
 
 .message.user {
   margin-left: auto;
-  background-color: #c5cae9; /* contrasting lighter theme tint */
+  background-color: #c5cae9;
   color: #0d102b;
 }
 
 /* Input bar */
 .input-bar {
   padding: 8px 10px;
-  border-top: 1px solid rgba(63,81,181,0.16);
+  border-top: 1px solid rgba(63, 81, 181, 0.16);
   background-color: #ffffff;
 }
 
@@ -80,11 +84,11 @@ body {
 }
 
 #input {
-  flex: 1;
+  flex: 1 1 auto;
   resize: none;
   padding: 7px 9px;
   border-radius: 8px;
-  border: 1px solid rgba(63,81,181,0.35);
+  border: 1px solid rgba(63, 81, 181, 0.35);
   font-size: 0.95rem;
   line-height: 1.4;
 }
@@ -93,7 +97,7 @@ body {
   padding: 7px 12px;
   border-radius: 8px;
   border: none;
-  background-color: #3f51b5; /* w3-theme-indigo primary */
+  background-color: #3f51b5;
   color: #fff;
   font-size: 0.9rem;
   cursor: pointer;
