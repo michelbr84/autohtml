@@ -1,4 +1,4 @@
-/* Base typography & page structure (W3.CSS handles layout/spacing) */
+/* Base typography & page structure (W3.CSS friendly) */
 body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   color: #333;
@@ -132,7 +132,7 @@ body.night-mode .btn-click:focus {
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-#night-toggle::before {
+#night-toggle:before {
   content: "";
   position: absolute;
   top: 2px;
@@ -149,7 +149,7 @@ body.night-mode .btn-click:focus {
   border-color: #4f46e5;
 }
 
-#night-toggle:checked::before {
+#night-toggle:checked:before {
   transform: translateX(16px);
   background-color: #e5e7eb;
 }
@@ -163,4 +163,216 @@ body.night-mode .btn-click:focus {
 
 body.night-mode #night-toggle-label {
   color: #9ca3af;
+}
+
+/* ChatGPT-like app layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background-color: #f3f4f6;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar .new-chat-btn {
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.sidebar .new-chat-btn:hover {
+  background-color: #f9fafb;
+}
+
+.sidebar .chats-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.sidebar .chat-item {
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.sidebar .chat-item:hover,
+.sidebar .chat-item.active {
+  background-color: #e5e7eb;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.main-topbar-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+#messages {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.message {
+  max-width: 900px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.message.assistant {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.message.user {
+  margin-left: auto;
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Bottom input area */
+.input-bar {
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.input-inner {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+#input {
+  flex: 1;
+  resize: none;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+#send-btn {
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Night mode for ChatGPT-like layout */
+body.night-mode .sidebar {
+  background-color: #020817;
+  border-right-color: #111827;
+}
+
+body.night-mode .sidebar .new-chat-btn {
+  background-color: #020817;
+  border-color: #111827;
+  color: #e5e7eb;
+}
+
+body.night-mode .sidebar .new-chat-btn:hover {
+  background-color: #020817;
+}
+
+body.night-mode .sidebar .chats-list {
+  scrollbar-color: #4b5563 #020817;
+}
+
+body.night-mode .sidebar .chat-item {
+  color: #9ca3af;
+}
+
+body.night-mode .sidebar .chat-item:hover,
+body.night-mode .sidebar .chat-item.active {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+body.night-mode .main-area {
+  background-color: #020817;
+}
+
+body.night-mode .main-topbar {
+  background-color: #020817;
+  border-bottom-color: #111827;
+}
+
+body.night-mode .main-topbar-title {
+  color: #e5e7eb;
+}
+
+body.night-mode #messages {
+  color: #e5e7eb;
+}
+
+body.night-mode .message.assistant {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+body.night-mode .message.user {
+  background-color: #2563eb;
+  color: #e5e7eb;
+}
+
+body.night-mode .input-bar {
+  background-color: #020817;
+  border-top-color: #111827;
+}
+
+body.night-mode #input {
+  background-color: #020817;
+  border-color: #111827;
+  color: #e5e7eb;
+}
+
+body.night-mode #send-btn {
+  background-color: #2563eb;
+}
+
+body.night-mode #send-btn:hover {
+  background-color: #1d4ed8;
 }
